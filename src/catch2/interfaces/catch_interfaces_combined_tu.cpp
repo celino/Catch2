@@ -43,8 +43,6 @@ namespace Catch {
     IExceptionTranslatorRegistry::~IExceptionTranslatorRegistry() = default;
 }
 
-template class std::unique_ptr<Catch::IExceptionTranslator const>;
-
 
 ////////////////////////////////////////////////////////
 // vvv formerly catch_interfaces_registry_hub.cpp vvv //
@@ -80,4 +78,12 @@ namespace Catch {
     ITestCaseRegistry::~ITestCaseRegistry() = default;
 }
 
+////////////////////////////////////////////////////
+//   vvv  externed templates in interfaces  vvv   //
+////////////////////////////////////////////////////
+
+#include <catch2/interfaces/catch_interfaces_reporter.hpp>
+
 template class std::unique_ptr<Catch::ITestInvoker>;
+template class std::unique_ptr<Catch::IExceptionTranslator const>;
+template class std::unique_ptr<Catch::IReporterFactory>;
