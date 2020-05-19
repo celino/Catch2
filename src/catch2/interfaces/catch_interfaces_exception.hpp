@@ -73,7 +73,11 @@ namespace Catch {
                 ( new ExceptionTranslator<T>( translateFunction ) );
         }
     };
-}
+
+} // namespace Catch
+
+extern template class std::unique_ptr<Catch::IExceptionTranslator const>;
+
 
 ///////////////////////////////////////////////////////////////////////////////
 #define INTERNAL_CATCH_TRANSLATE_EXCEPTION2( translatorName, signature ) \

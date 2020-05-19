@@ -43,6 +43,8 @@ namespace Catch {
     IExceptionTranslatorRegistry::~IExceptionTranslatorRegistry() = default;
 }
 
+template class std::unique_ptr<Catch::IExceptionTranslator const>;
+
 
 ////////////////////////////////////////////////////////
 // vvv formerly catch_interfaces_registry_hub.cpp vvv //
@@ -77,3 +79,5 @@ namespace Catch {
     ITestInvoker::~ITestInvoker() = default;
     ITestCaseRegistry::~ITestCaseRegistry() = default;
 }
+
+template class std::unique_ptr<Catch::ITestInvoker>;
